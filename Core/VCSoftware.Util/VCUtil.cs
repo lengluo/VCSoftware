@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Configuration.Json;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -12,6 +14,8 @@ namespace VCSoftware.Util
     public class VCUtil
     {
         public static HttpContext UtilContext;
+
+        #region 日志
         public class Logger
         {
             public static ILoggerManager loggerMgr;
@@ -35,5 +39,21 @@ namespace VCSoftware.Util
                 logger.Log(level, msg);
             }
         }
+
+        #endregion
+
+        #region 配置读取
+
+        public class Config
+        {
+
+            public static IConfiguration Configuration { get; set; }
+            static Config()
+            {
+                Configuration = new ConfigurationBuilder().Add(new JsonConfigurationSource() { Path = "", ReloadOnChange = true }).Build();
+            }
+        }
+
+        #endregion
     }
 }
