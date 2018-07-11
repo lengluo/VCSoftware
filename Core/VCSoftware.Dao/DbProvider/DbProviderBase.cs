@@ -109,13 +109,27 @@ namespace VCSoftware.Dao.DbProvider
         /// <summary>
         /// 执行
         /// </summary>
-        /// <typeparam name="T"></typeparam>
         /// <param name="sqlStr"></param>
         /// <returns></returns>
         public virtual int Execute(IDbConnection conn, string sqlStr)
         {
             var data = SqlMapper.Execute(conn, sqlStr);
             return data;
+        }
+
+        /// <summary>
+        /// 执行存储过程并返回结果
+        /// </summary>
+        /// <param name="conn"></param>
+        /// <param name="procedureName">存储过程名称</param>
+        /// <param name="param">存储过程参数</param>
+        /// <returns></returns>
+        public virtual DataTable ExecuteProcedure(IDbConnection conn, string procedureName, Dapper.SqlMapper.IDynamicParameters param)
+        {
+            var dt = new DataTable();
+            var gridReader = SqlMapper.ExecuteReader(conn, procedureName, param, commandType: CommandType.StoredProcedure);
+            dt.Load(gridReader);
+            return dt;
         }
     }
 }

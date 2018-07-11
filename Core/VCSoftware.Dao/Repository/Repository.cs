@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Text;
 using VCSoftware.Dao.DbProvider;
 using VCSoftware.Util;
@@ -141,6 +142,39 @@ namespace VCSoftware.Dao.Repository
                 {
                     int result;
                     result = _dbProvider.Execute(conn, sqlStr);
+                    trans.Commit();
+                    return result;
+                }
+                catch (Exception ex)
+                {
+                    trans.Rollback();
+                    VCUtil.Logger.Error(ex.Message);
+                    throw ex;
+                }
+                finally
+                {
+                    conn.Close();
+                }
+            }
+        }
+
+        /// <summary>
+        /// 执行存储过程并返回结果
+        /// </summary>
+        /// <param name="conn"></param>
+        /// <param name="procedureName">存储过程名称</param>
+        /// <param name="param">存储过程参数</param>
+        /// <returns></returns>
+        public DataTable ExecuteProcedure(string procedureName, Dapper.SqlMapper.IDynamicParameters param)
+        {
+            using (var conn = _dbProvider.GetConnection())
+            {
+                conn.Open();
+                var trans = _dbProvider.GetTransaction(conn);
+                try
+                {
+                    DataTable result;
+                    result = _dbProvider.ExecuteProcedure(conn, procedureName, param);
                     trans.Commit();
                     return result;
                 }

@@ -1,3 +1,4 @@
+using Oracle.ManagedDataAccess.Client;
 using System;
 using System.IO;
 using System.Reflection;
@@ -107,6 +108,30 @@ namespace VCSoftware.Test.Util
 
             var repo = new Repository<User>(new OracleDbProvider());
             var data = repo.Execute("select * from sys_user");
+        }
+
+        /// <summary>
+        /// 执行存储过程并返回结果
+        /// </summary>
+        [Fact]
+        public void ExecuteProcedure()
+        {
+            var codebase = Assembly.GetExecutingAssembly().CodeBase;
+            var pathUrlToDllDirectory = Path.GetDirectoryName(codebase);
+            var pathToDllDirectory = new Uri(pathUrlToDllDirectory).LocalPath;
+            var webroot = pathToDllDirectory.ToString().Substring(0, pathToDllDirectory.ToString().IndexOf("bin"));
+
+            VCUtil.Config.InitConfig(webroot, "appsettings.json");
+            VCUtil.Logger.loggerMgr = new Log4NetLoggerManager();
+
+            var repo = new Repository<User>(new OracleDbProvider());
+            var para = new OracleDynamicParameters();
+            para.Add("sTime", "0001-01-01");
+            para.Add("eTime", "9999-12-31");
+            para.Add("filterType", "案件类别");
+            para.Add("officeIdsAcl", "1459839968518011");
+            para.Add("out_cursor", OracleDbType.RefCursor, System.Data.ParameterDirection.Output);
+            var data = repo.ExecuteProcedure("pe_decisiontotalall", para);
         }
     }
 }

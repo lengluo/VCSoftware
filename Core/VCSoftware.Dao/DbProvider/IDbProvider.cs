@@ -62,5 +62,14 @@ namespace VCSoftware.Dao.DbProvider
         /// <param name="sqlStr"></param>
         /// <returns></returns>
         int Execute(IDbConnection conn, string sqlStr);
+
+        /// <summary>
+        /// 执行存储过程并返回结果
+        /// </summary>
+        /// <param name="conn"></param>
+        /// <param name="procedureName">存储过程名称</param>
+        /// <param name="param">存储过程参数</param>
+        /// <returns></returns>
+        DataTable ExecuteProcedure(IDbConnection conn, string procedureName, Dapper.SqlMapper.IDynamicParameters param);
     }
 }
