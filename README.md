@@ -1,11 +1,13 @@
 # VCSoftware
-.net core 2 framwork
+.net core 2 底层框架
+
+.net core 2 underlying framwork
 
 **20180710** 
 
-  数据持久化，Oracle驱动，简易增删改查执行。
+  数据持久化，Oracle驱动，简易增删改查执行及存储过程调用。
 
-  Data Persistence, Oracle provider, simple CRUDE.
+  Data Persistence, Oracle provider, simple CRUDE and storeprocedure call.
 
 **20180706**
     
