@@ -1,11 +1,15 @@
 # VCSoftware
 .net core 2 framwork
 
-20180710 数据持久化，Oracle驱动，简易增删改查执行。
+**20180710** 
 
-         Data Persistence, Oracle provider, simple CRUDE.
+  数据持久化，Oracle驱动，简易增删改查执行。
 
-20180706 日志、配置。
+  Data Persistence, Oracle provider, simple CRUDE.
 
-         LogModule,ConfigManager
+**20180706**
+    
+  日志、配置。
+
+  LogModule,ConfigManager
 
