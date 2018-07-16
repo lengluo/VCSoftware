@@ -3,7 +3,7 @@ using VCSoftware.Dao;
 using VCSoftware.Dao.Repository;
 using Xunit;
 
-namespace VCSoftware.Test.Util
+namespace VCSoftware.Test.Dao
 {
     [Table("Sys_User")]
     public class User : BaseEntity

@@ -8,21 +8,21 @@ using Xunit;
 
 namespace VCSoftware.Test.Util
 {
-    public class Log
+    public class Log : IClassFixture<LogFixture>
     {
+        private readonly LogFixture _logFixture;
+
+        public Log(LogFixture logFixture)
+        {
+            _logFixture = logFixture;
+        }
+
         /// <summary>
         /// ¸ú×Ù
         /// </summary>
         [Fact]
         public void Trace()
         {
-            var codebase = Assembly.GetExecutingAssembly().CodeBase;
-            var pathUrlToDllDirectory = Path.GetDirectoryName(codebase);
-            var pathToDllDirectory = new Uri(pathUrlToDllDirectory).LocalPath;
-            var webroot = pathToDllDirectory.ToString().Substring(0, pathToDllDirectory.ToString().IndexOf("bin"));
-
-            VCUtil.Config.InitConfig(webroot,"appsettings.json");
-            VCUtil.Logger.loggerMgr = new Log4NetLoggerManager();
             VCUtil.Logger.Trace("woca");
         }
 
@@ -32,13 +32,6 @@ namespace VCSoftware.Test.Util
         [Fact]
         public void Debug()
         {
-            var codebase = Assembly.GetExecutingAssembly().CodeBase;
-            var pathUrlToDllDirectory = Path.GetDirectoryName(codebase);
-            var pathToDllDirectory = new Uri(pathUrlToDllDirectory).LocalPath;
-            var webroot = pathToDllDirectory.ToString().Substring(0, pathToDllDirectory.ToString().IndexOf("bin"));
-
-            VCUtil.Config.InitConfig(webroot, "appsettings.json");
-            VCUtil.Logger.loggerMgr = new Log4NetLoggerManager();
             VCUtil.Logger.Debug("woca");
         }
 
@@ -48,13 +41,6 @@ namespace VCSoftware.Test.Util
         [Fact]
         public void Info()
         {
-            var codebase = Assembly.GetExecutingAssembly().CodeBase;
-            var pathUrlToDllDirectory = Path.GetDirectoryName(codebase);
-            var pathToDllDirectory = new Uri(pathUrlToDllDirectory).LocalPath;
-            var webroot = pathToDllDirectory.ToString().Substring(0, pathToDllDirectory.ToString().IndexOf("bin"));
-
-            VCUtil.Config.InitConfig(webroot, "appsettings.json");
-            VCUtil.Logger.loggerMgr = new Log4NetLoggerManager();
             VCUtil.Logger.Info("woca");
         }
 
@@ -64,13 +50,6 @@ namespace VCSoftware.Test.Util
         [Fact]
         public void Warn()
         {
-            var codebase = Assembly.GetExecutingAssembly().CodeBase;
-            var pathUrlToDllDirectory = Path.GetDirectoryName(codebase);
-            var pathToDllDirectory = new Uri(pathUrlToDllDirectory).LocalPath;
-            var webroot = pathToDllDirectory.ToString().Substring(0, pathToDllDirectory.ToString().IndexOf("bin"));
-
-            VCUtil.Config.InitConfig(webroot, "appsettings.json");
-            VCUtil.Logger.loggerMgr = new Log4NetLoggerManager();
             VCUtil.Logger.Warn("woca");
         }
 
@@ -80,13 +59,6 @@ namespace VCSoftware.Test.Util
         [Fact]
         public void Error()
         {
-            var codebase = Assembly.GetExecutingAssembly().CodeBase;
-            var pathUrlToDllDirectory = Path.GetDirectoryName(codebase);
-            var pathToDllDirectory = new Uri(pathUrlToDllDirectory).LocalPath;
-            var webroot = pathToDllDirectory.ToString().Substring(0, pathToDllDirectory.ToString().IndexOf("bin"));
-
-            VCUtil.Config.InitConfig(webroot, "appsettings.json");
-            VCUtil.Logger.loggerMgr = new Log4NetLoggerManager();
             VCUtil.Logger.Error("woca");
         }
 
@@ -96,13 +68,6 @@ namespace VCSoftware.Test.Util
         [Fact]
         public void Fatal()
         {
-            var codebase = Assembly.GetExecutingAssembly().CodeBase;
-            var pathUrlToDllDirectory = Path.GetDirectoryName(codebase);
-            var pathToDllDirectory = new Uri(pathUrlToDllDirectory).LocalPath;
-            var webroot = pathToDllDirectory.ToString().Substring(0, pathToDllDirectory.ToString().IndexOf("bin"));
-
-            VCUtil.Config.InitConfig(webroot, "appsettings.json");
-            VCUtil.Logger.loggerMgr = new Log4NetLoggerManager();
             VCUtil.Logger.Fatal("woca");
         }
     }
