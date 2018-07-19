@@ -4,7 +4,14 @@
 .net core 2 underlying framwork
 
 **ORM**     Dapper
-**Cache**   Microsoft.Extensions.Caching 
+**Log**   Log4net
+
+
+**20180719**
+
+身份认证及授权，cookieidentity。
+
+Authentication，cookieidentity
 
 **20180716**
 
