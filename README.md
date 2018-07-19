@@ -1,8 +1,8 @@
 # VCSoftware
-.net core 2 底层框架
+.net core 2 底层框架，使用用Nuget打包各个项目到本地package，使用时添加到网站站点。
 
-.net core 2 underlying framwork
-
+.net core 2 underlying framwork，Use Nuget to pack and add refference into website project.
+ 
 **ORM**     Dapper
 **Log**   Log4net
 
