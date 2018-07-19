@@ -2,6 +2,10 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.0</TargetFramework>
+    <Version>1.0.0.1</Version>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Description>Web站点</Description>
+    <Copyright>vitchen</Copyright>
   </PropertyGroup>
 
   <ItemGroup>
@@ -10,9 +14,13 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.5" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.0.3" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Core\VCSoftware.Auth\VCSoftware.Auth.csproj" />
+    <ProjectReference Include="..\Core\VCSoftware.Cache\VCSoftware.Cache.csproj" />
+    <ProjectReference Include="..\Core\VCSoftware.Dao\VCSoftware.Dao.csproj" />
     <ProjectReference Include="..\Core\VCSoftware.Util\VCSoftware.Util.csproj" />
   </ItemGroup>
 

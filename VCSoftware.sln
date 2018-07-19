@@ -19,7 +19,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VCSoftware.Test.Dao", "Test
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VCSoftware.Cache", "Core\VCSoftware.Cache\VCSoftware.Cache.csproj", "{E8045C8B-90FE-4B86-8FDC-2E952AF66C67}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VCSoftware.Test.Cache", "Test\VCSoftware.Test.Cache\VCSoftware.Test.Cache.csproj", "{53F82234-017A-44D9-865E-120BA515CD13}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VCSoftware.Test.Cache", "Test\VCSoftware.Test.Cache\VCSoftware.Test.Cache.csproj", "{53F82234-017A-44D9-865E-120BA515CD13}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VCSoftware.Auth", "Core\VCSoftware.Auth\VCSoftware.Auth.csproj", "{C3BD1DFE-C654-415D-81E4-00F704168453}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -55,6 +57,10 @@ Global
 		{53F82234-017A-44D9-865E-120BA515CD13}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{53F82234-017A-44D9-865E-120BA515CD13}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{53F82234-017A-44D9-865E-120BA515CD13}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C3BD1DFE-C654-415D-81E4-00F704168453}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3BD1DFE-C654-415D-81E4-00F704168453}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3BD1DFE-C654-415D-81E4-00F704168453}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3BD1DFE-C654-415D-81E4-00F704168453}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -66,6 +72,7 @@ Global
 		{9CA71562-0423-4C56-9343-8EEC6B1182AD} = {95BFAA0E-FC72-432D-99A9-659EEE0B0BE4}
 		{E8045C8B-90FE-4B86-8FDC-2E952AF66C67} = {3EDBC46C-BE89-40A2-AF20-A72FA2530EB9}
 		{53F82234-017A-44D9-865E-120BA515CD13} = {95BFAA0E-FC72-432D-99A9-659EEE0B0BE4}
+		{C3BD1DFE-C654-415D-81E4-00F704168453} = {3EDBC46C-BE89-40A2-AF20-A72FA2530EB9}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D1DD003A-E2F9-42ED-8A23-A3B5EFF3D87D}

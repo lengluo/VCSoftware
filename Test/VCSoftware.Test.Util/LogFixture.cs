@@ -16,8 +16,8 @@ namespace VCSoftware.Test.Util
             var pathToDllDirectory = new Uri(pathUrlToDllDirectory).LocalPath;
             var webroot = pathToDllDirectory.ToString().Substring(0, pathToDllDirectory.ToString().IndexOf("bin"));
 
-            VCUtil.Config.InitConfig(webroot, "appsettings.json");
-            VCUtil.Logger.loggerMgr = new Log4NetLoggerManager();
+            //VCUtil.Config.InitConfig(webroot, "appsettings.json");
+            //VCUtil.Logger.loggerMgr = new Log4NetLoggerManager();
         }
 
         public void Dispose()

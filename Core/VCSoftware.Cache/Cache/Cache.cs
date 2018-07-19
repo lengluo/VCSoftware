@@ -50,6 +50,9 @@ namespace VCSoftware.Cache.Cache
         /// </summary>
         /// <param name="key">缓存key</param>
         /// <param name="value">缓存value</param>
+        /// <param name="expiredTime">超期时间</param>
+        /// <param name="expiredTimeType">超期类型</param>
+        /// <param name="changeToken">超期自定义ChangeToken，可用以自定义条件和回调</param>
         /// <returns></returns>
         public void Add(string key, object value, TimeSpan expiredTime = default(TimeSpan), ExpiredTimeType expiredTimeType = ExpiredTimeType.None, IChangeToken changeToken = null)
         {
@@ -64,6 +67,9 @@ namespace VCSoftware.Cache.Cache
         /// </summary>
         /// <param name="key"></param>
         /// <param name="value"></param>
+        /// <param name="expiredTime">超期时间</param>
+        /// <param name="expiredTimeType">超期类型</param>
+        /// <param name="changeToken">超期自定义ChangeToken，可用以自定义条件和回调</param>
         /// <returns></returns>
         public void Set(string key, object value, TimeSpan expiredTime = default(TimeSpan), ExpiredTimeType expiredTimeType = ExpiredTimeType.Absolute, IChangeToken changeToken = null)
         {
