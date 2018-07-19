@@ -11,7 +11,7 @@
 
 身份认证及授权，cookieidentity。
 
-Authentication，cookieidentity
+Authentication，cookieidentity.
 
 **20180716**
 
@@ -29,5 +29,5 @@ Cache, Memory Cache, simple CRUD and ExpiredTime strategy.
     
   日志、配置。
 
-  LogModule,ConfigManager
+  LogModule,ConfigManager.
 
