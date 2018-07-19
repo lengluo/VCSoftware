@@ -6,6 +6,12 @@
 **ORM**     Dapper
 **Cache**   Microsoft.Extensions.Caching 
 
+**20180716**
+
+缓存，内存缓存简易增删改查及超时策略。
+
+Cache, Memory Cache, simple CRUD and ExpiredTime strategy.
+
 **20180710** 
 
   数据持久化，Oracle驱动，简易增删改查执行及存储过程调用。
