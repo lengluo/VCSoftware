@@ -10,20 +10,9 @@ using VCSoftware.Util.Log;
 
 namespace VCSoftware.Web
 {
-    public class VCStartup
+    public abstract class VCStartup
     {
-        private string _loginPath = "/login";
-        protected virtual string LoginPath
-        {
-            get
-            {
-                return _loginPath;
-            }
-            set
-            {
-                _loginPath = value;
-            }
-        }
+        public virtual string LoginPath => "/login";
 
 
 
@@ -43,14 +32,21 @@ namespace VCSoftware.Web
             services.AddAuthentication(l =>
             {
                 l.DefaultAuthenticateScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+                l.DefaultForbidScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+                l.DefaultChallengeScheme = CookieAuthenticationDefaults.AuthenticationScheme;
             }).AddCookie(l =>
             {
-                l.LoginPath = _loginPath;
+                l.LoginPath = LoginPath;
                 l.Cookie.Name = "AUTH_USER_COOKIE";
                 l.Cookie.Path = "/";
                 l.Cookie.HttpOnly = true;
                 l.Cookie.Expiration = new System.TimeSpan(365, 0, 0, 0);
                 l.ExpireTimeSpan = new System.TimeSpan(365, 0, 0, 0);
+            });
+            services.ConfigureApplicationCookie(opt =>
+            {
+                //认证未通过返回路径
+                opt.AccessDeniedPath = LoginPath;
             });
             //Session
             services.AddSession(op =>
@@ -63,18 +59,6 @@ namespace VCSoftware.Web
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public virtual void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
-            if (env.IsDevelopment())
-            {
-                app.UseBrowserLink();
-                app.UseDeveloperExceptionPage();
-            }
-            else
-            {
-                app.UseExceptionHandler("/Home/Error");
-            }
-
-            app.UseStaticFiles();
-
             //Session，需先注册
             app.UseSession();
 

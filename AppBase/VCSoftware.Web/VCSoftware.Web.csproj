@@ -18,10 +18,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Core\VCSoftware.Auth\VCSoftware.Auth.csproj" />
-    <ProjectReference Include="..\Core\VCSoftware.Cache\VCSoftware.Cache.csproj" />
-    <ProjectReference Include="..\Core\VCSoftware.Dao\VCSoftware.Dao.csproj" />
-    <ProjectReference Include="..\Core\VCSoftware.Util\VCSoftware.Util.csproj" />
+    <ProjectReference Include="..\..\Core\VCSoftware.Auth\VCSoftware.Auth.csproj" />
+    <ProjectReference Include="..\..\Core\VCSoftware.Cache\VCSoftware.Cache.csproj" />
+    <ProjectReference Include="..\..\Core\VCSoftware.Dao\VCSoftware.Dao.csproj" />
+    <ProjectReference Include="..\..\Core\VCSoftware.Util\VCSoftware.Util.csproj" />
   </ItemGroup>
 
 </Project>

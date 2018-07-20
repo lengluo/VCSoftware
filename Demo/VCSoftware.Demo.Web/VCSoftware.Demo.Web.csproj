@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="VCSoftware.Auth" Version="1.0.0.3" />
+    <PackageReference Include="VCSoftware.Cache" Version="1.0.0.2" />
+    <PackageReference Include="VCSoftware.Util" Version="1.0.0.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="VCSoftware.Web">
+      <HintPath>..\Lib\VCSoftware.Web.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="Views\Home\LogOn.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+  </ItemGroup>
+
+</Project>

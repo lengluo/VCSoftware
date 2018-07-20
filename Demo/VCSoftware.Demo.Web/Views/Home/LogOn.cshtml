@@ -1,0 +1,10 @@
+﻿@{
+    ViewData["Title"] = "LogOn";
+}
+
+<form asp-controller="Home" asp-action="LogOn" method="post">
+    User: <input type="text" />
+    Password: <input type="password" />
+    <button>登录</button>
+</form>
+<span>@ViewData["Message"]</span>
