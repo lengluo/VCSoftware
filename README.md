@@ -1,10 +1,17 @@
 # VCSoftware
-.net core 2 底层框架
+.net core 2 底层框架，使用用Nuget打包各个项目到本地package，使用时添加到网站站点。
 
-.net core 2 underlying framwork
-
+.net core 2 underlying framwork，Use Nuget to pack and add refference into website project.
+ 
 **ORM**     Dapper
-**Cache**   Microsoft.Extensions.Caching 
+**Log**   Log4net
+
+
+**20180719**
+
+身份认证及授权，cookieidentity。
+
+Authentication，cookieidentity.
 
 **20180716**
 
@@ -22,5 +29,5 @@ Cache, Memory Cache, simple CRUD and ExpiredTime strategy.
     
   日志、配置。
 
-  LogModule,ConfigManager
+  LogModule,ConfigManager.
 
